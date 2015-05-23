@@ -34,6 +34,7 @@ module TranslatorManager
 
     def setup!
       I18n.backend = new_store
+      I18n.load_path += Dir["#{ Translator.data_directory }/*.{rb,yml}"]
     end
 
     private
