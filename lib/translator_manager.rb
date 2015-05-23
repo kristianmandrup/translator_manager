@@ -6,6 +6,9 @@ module TranslatorManager
   mattr_accessor :param_key
   @@param_key = :locale
 
+  mattr_accessor :fallback_required
+  @@fallback_required = true
+
   module ClassMethods
     def setup
       yield self
@@ -28,6 +31,16 @@ module TranslatorManager
         puts 'No Internet connection, failed to synchronize translations'
       end
     end
+
+    def setup!
+      I18n.backend = new_store
+    end
+
+    private
+      def new_store
+        new_store = I18n::Backend::KeyValue.new(Translator::Store.instance)
+        fallback_required ? I18n::Backend::Chain.new(new_store, I18n.backend) : new_store
+      end
   end
 
   extend ClassMethods

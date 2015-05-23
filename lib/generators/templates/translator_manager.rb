@@ -5,6 +5,11 @@ TranslatorManager.setup do |config|
   # parameters. Defaults to `locale`.
   # config.param_key = :locale
 
+  # ==> Fallback Options
+  # This option is to enable I18 fallback.
+  # Default is +true+.
+  # config.fallback_required = true
+
   # Translator Configurations
   config.translator do |translator_config|
     # ==> Storage Configurations

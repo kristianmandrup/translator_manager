@@ -15,4 +15,3 @@ end
 
 gem 'redis'
 gem 'byebug', group: [:development, :test]
-
