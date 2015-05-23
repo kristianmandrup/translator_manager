@@ -1,9 +1,10 @@
-= TranslatorManager
+TranslatorManager
+--------------
 
 This Engines extends the functionality of [Translator](https://github.com/kuldeepaggarwal/translator) gem which provides an API to get the translations for the given language/locale.
 
 
-= Installation
+Installation
 --------------
 
 Add this line to your application's Gemfile:
@@ -19,7 +20,7 @@ $ bundle install
 ```
 
 
-= Usage
+Usage
 -------
 
 STEP1: copy the configuration file by executing the following command:
@@ -81,7 +82,7 @@ LOCALEAPP_API_KEY=<your localeapp key> rails server
 This will synchronize your locale files(will also get file paths from I18n.config.config_path) and start the server.
 
 
-= Task
+Task
 ------
 
 It also provides a rake task to sync locale files manually.
@@ -91,7 +92,7 @@ LOCALEAPP_API_KEY=<your localeapp key> rake translator_manager:synchronize
 ```
 
 
-= Testing
+Testing
 ---------
 
 Ensure Redis server is installed and started.
