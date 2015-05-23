@@ -20,4 +20,18 @@ describe TranslatorManager do
       end
     end
   end
+
+  describe '.setup' do
+    it 'set ups the values for TranslatorManager' do
+      expect(TranslatorManager.param_key).to eq(:locale)
+      TranslatorManager.setup do |config|
+        config.param_key = :kd
+        config.translator do |translator_config|
+
+        end
+      end
+      expect(TranslatorManager.param_key).to eq(:kd)
+      TranslatorManager.param_key = :locale
+    end
+  end
 end

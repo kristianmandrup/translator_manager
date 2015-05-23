@@ -8,7 +8,7 @@ module TranslatorManager
       desc 'Creates a Translator initializer'
 
       def copy_initializer
-        template 'translator.rb', 'config/initializers/translator.rb'
+        template 'translator_manager.rb', 'config/initializers/translator_manager.rb'
       end
     end
   end
